@@ -22,6 +22,7 @@ phases:
 
   build:
     commands:
+      - docker login -u raghul2904 -p dckr_pat_dATa7CukqOwMlFzTfcK09-CPDWI
       - docker build -t $ECR_REPO:$IMAGE_TAG .
       - docker tag $ECR_REPO:$IMAGE_TAG 453232925106.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG
       - docker push 453232925106.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG
