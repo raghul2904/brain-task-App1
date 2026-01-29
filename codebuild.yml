@@ -27,8 +27,4 @@ phases:
       - docker tag $ECR_REPO:$IMAGE_TAG 453232925106.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG
       - docker push 453232925106.dkr.ecr.$AWS_REGION.amazonaws.com/$ECR_REPO:$IMAGE_TAG
 
-  post_build:
-    commands:
-      - aws eks update-kubeconfig --region $AWS_REGION --name $EKS_CLUSTER_NAME
-      - kubectl apply -f k8s/deployment.yaml
-      - kubectl apply -f k8s/service.yml
+
